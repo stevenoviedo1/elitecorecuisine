@@ -1,0 +1,5 @@
+[] 
+
+// NOTE: This file is no longer used.
+// Orders are now stored in Supabase (see lib/supabase.js and app/api/orders/route.js).
+// This file can be safely deleted after migration is complete.

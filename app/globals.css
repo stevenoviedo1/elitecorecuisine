@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   Elite Core Cuisine - Global Styles
+   Premium restaurant feel: consistent spacing, buttons, cards, dark mode.
+   ========================================= */
+
+/* Base */
+body {
+    background: #ffffff;
+    color: #171717;
+}
+
+.dark body {
+    background: #000000;
+    color: #ededed;
+}
+
+/* Custom brand colors that need dark variants */
+.bg-eliteBlack {
+    background-color: #f8f8f8;
+}
+.dark .bg-eliteBlack {
+    background-color: #000000;
+}
+
+/* Better dark shadows */
+.dark .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
+}
+
+/* Hero crossfade animation (HomeSection) */
+@keyframes heroFade {
+    0%, 20% { opacity: 0; }
+    25%, 45% { opacity: 1; }
+    50%, 70% { opacity: 0; }
+    75%, 100% { opacity: 0; }
+}
+
+.hero-fade {
+    animation: heroFade 15s infinite;
+}
+.hero-fade:nth-child(2) { animation-delay: 5s; }
+.hero-fade:nth-child(3) { animation-delay: 10s; }
+
+/* Premium restaurant polish */
+.btn-primary {
+    @apply rounded-2xl bg-eliteRed px-8 py-3.5 text-lg font-semibold text-white shadow-lg transition-all hover:bg-eliteGold hover:text-black active:scale-[0.985];
+}
+
+.btn-secondary {
+    @apply rounded-2xl border-2 border-eliteGold px-8 py-3.5 text-lg font-semibold text-eliteGold transition-all hover:bg-eliteGold hover:text-black active:scale-[0.985];
+}
+
+.card {
+    @apply rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-900;
+}
+
+.section-title {
+    @apply text-5xl font-bold text-eliteRed tracking-tight;
+}
+
+.section-subtitle {
+    @apply text-3xl font-bold text-eliteGold;
+}
+
+/* Additional premium touches */
+.restaurant-card {
+    @apply rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-gray-700 dark:bg-gray-900;
+}
+
+.premium-button {
+    @apply rounded-2xl bg-eliteRed px-8 py-3.5 text-lg font-semibold text-white shadow-lg transition-all hover:bg-eliteGold hover:text-black active:scale-[0.985];
+}
+
+
+

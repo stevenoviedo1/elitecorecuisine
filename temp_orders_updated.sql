@@ -1,0 +1,3 @@
+﻿-- ============================================
+-- EliteCore Cuisine - Orders Table
+-- Run this in Supabase SQL Editor
