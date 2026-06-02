@@ -34,61 +34,61 @@ const Header = () => {
 
     return (
         <header className="fixed left-0 right-0 top-0 z-50 bg-eliteBlack shadow-2xl">
-            <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-6 lg:px-8 py-6">
-                {/* Logo + Text */}
-                <Link href="/" className="flex items-center space-x-3 sm:space-x-5">
+            <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+                {/* Logo + Text - compact on mobile */}
+                <Link href="/" className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
                     <img
                         src="/images/logo.png"
                         alt="Elite Core Cuisine Logo"
-                        className="h-14 sm:h-20 w-auto rounded-xl border border-eliteGold/30"
+                        className="h-10 sm:h-16 w-auto rounded-xl border border-eliteGold/30"
                     />
                     <img
                         src="/images/elitecoffee.jpg"
                         alt="Elite Coffee Logo"
-                        className="h-12 sm:h-16 w-12 sm:w-16 rounded-full object-cover border border-eliteGold/30"
+                        className="h-8 sm:h-12 w-8 sm:w-12 rounded-full object-cover border border-eliteGold/30 sm:block hidden"
                     />
                     <div>
-                        <span className="text-2xl sm:text-3xl font-extrabold tracking-wider text-eliteGold transition hover:text-eliteRed block">
+                        <span className="text-lg sm:text-2xl font-extrabold tracking-wider text-eliteGold transition hover:text-eliteRed block">
                             Elite Core Cuisine
                         </span>
-                        <span className="text-[10px] sm:text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+                        <span className="text-[9px] sm:text-[10px] sm:text-xs text-emerald-600 dark:text-emerald-400 font-medium">
                             Open Daily • 10am – 9pm
                         </span>
                     </div>
                 </Link>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden space-x-14 md:flex">
-                    <a href="#home" className="text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
+                {/* Desktop Navigation - compact gaps on smaller screens */}
+                <nav className="hidden space-x-3 md:space-x-6 lg:space-x-10 xl:space-x-14 md:flex">
+                    <a href="#home" className="text-xl md:text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
                         Home
                     </a>
-                    <a href="#dishes" className="text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
+                    <a href="#dishes" className="text-xl md:text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
                         Dishes
                     </a>
-                    <a href="#about" className="text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
+                    <a href="#about" className="text-xl md:text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
                         About
                     </a>
-                    <a href="#menu" className="text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
+                    <a href="#menu" className="text-xl md:text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
                         Menu
                     </a>
-                    <a href="#review" className="text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
+                    <a href="#review" className="text-xl md:text-2xl font-medium text-black transition hover:text-eliteGold dark:text-gray-200 dark:hover:text-eliteGold">
                         Reviews
                     </a>
                 </nav>
 
-                {/* Icons - evenly spaced premium controls */}
-                <div className="flex items-center gap-6 md:gap-8">
+                {/* Icons - evenly spaced premium controls, compact on mobile */}
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-6">
                     <button
                         onClick={openSearch}
-                        className="p-2 text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed"
+                        className="p-1.5 text-2xl sm:p-2 sm:text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed"
                         title="Search menu"
                     >
                         <i className="fas fa-search"></i>
                     </button>
-                    <a href="tel:(956)258-5272" className="hidden md:block p-2 text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed" title="Call us">
+                    <a href="tel:(956)258-5272" className="hidden md:block p-1.5 text-2xl sm:p-2 sm:text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed" title="Call us">
                         <i className="fas fa-phone"></i>
                     </a>
-                    <a href="#dishes" className="relative p-2 text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed" title="View your favorites">
+                    <a href="#dishes" className="relative p-1.5 text-2xl sm:p-2 sm:text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed" title="View your favorites">
                         <i className="fas fa-heart"></i>
                         {getLikedCount() > 0 && (
                             <span className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-eliteGold text-[10px] font-bold text-black">
@@ -96,7 +96,7 @@ const Header = () => {
                             </span>
                         )}
                     </a>
-                    <a href="#cart" className="relative p-2 text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed" title="Your Cart">
+                    <a href="#cart" className="relative p-1.5 text-2xl sm:p-2 sm:text-3xl text-eliteGold transition hover:text-eliteRed active:text-eliteRed" title="Your Cart">
                         <i className="fas fa-shopping-cart"></i>
                         {/* Cart Badge */}
                         {cartItems.length > 0 && (
@@ -107,7 +107,7 @@ const Header = () => {
                     </a>
                     <button
                         onClick={toggleNav}
-                        className="p-2 text-3xl text-eliteGold transition hover:text-eliteRed md:hidden active:text-eliteRed"
+                        className="p-1.5 text-2xl sm:p-2 sm:text-3xl text-eliteGold transition hover:text-eliteRed md:hidden active:text-eliteRed"
                         title="Menu"
                     >
                         <i className="fas fa-bars"></i>
@@ -149,7 +149,7 @@ const Header = () => {
 
             {/* Search Panel */}
             {searchActive && (
-                <div className="absolute left-4 right-4 md:left-auto md:right-8 top-24 w-auto md:w-[420px] rounded-2xl bg-white shadow-2xl dark:bg-gray-900 border border-gray-200 dark:border-gray-700 z-50">
+                <div className="absolute left-4 right-4 md:left-auto md:right-8 top-20 sm:top-24 w-auto md:w-[420px] rounded-2xl bg-white shadow-2xl dark:bg-gray-900 border border-gray-200 dark:border-gray-700 z-50">
                     <div className="flex items-center gap-3 p-4 border-b border-gray-200 dark:border-gray-700">
                         <i className="fas fa-search text-eliteGold text-xl ml-1"></i>
                         <input

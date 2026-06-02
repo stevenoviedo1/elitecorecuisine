@@ -30,13 +30,13 @@ const DarkModeToggle = () => {
     return (
         <button
             onClick={toggleMode}
-            className="fixed right-6 top-6 z-50 rounded-full bg-eliteGold p-3 text-eliteBlack shadow-2xl transition hover:bg-eliteRed hover:text-white"
+            className="fixed right-4 top-4 z-50 rounded-full bg-eliteGold p-2 text-eliteBlack shadow-2xl transition hover:bg-eliteRed hover:text-white sm:right-6 sm:top-6 sm:p-3"
             aria-label="Toggle dark/light mode"
         >
             {isDark ? (
-                <i className="fas fa-sun text-2xl"></i>  // Sun = switch to light
+                <i className="fas fa-sun text-xl sm:text-2xl"></i>  // Sun = switch to light
             ) : (
-                <i className="fas fa-moon text-2xl"></i>  // Moon = switch to dark
+                <i className="fas fa-moon text-xl sm:text-2xl"></i>  // Moon = switch to dark
             )}
         </button>
     );
