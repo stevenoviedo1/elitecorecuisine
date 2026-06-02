@@ -1,7 +1,15 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if the API key is present.
+// This prevents build failures on Vercel when the env var is not set
+// (email sending is optional — currently only used for "pay online" which is disabled).
+let resend = null;
+if (process.env.RESEND_API_KEY && process.env.RESEND_API_KEY.length > 5) {
+  resend = new Resend(process.env.RESEND_API_KEY);
+} else {
+  console.warn('RESEND_API_KEY is not set or invalid. Email confirmations will be skipped.');
+}
 
 // Nice branded email template for Elite Core Cuisine
 function createOrderEmailHtml({ order, customer }) {
@@ -135,6 +143,11 @@ export async function POST(request) {
 
         if (!customer?.email || !order?.id) {
             return NextResponse.json({ success: true, skipped: true });
+        }
+
+        if (!resend) {
+            console.warn('Skipping email send because Resend is not configured.');
+            return NextResponse.json({ success: true, skipped: true, reason: 'no-resend-key' });
         }
 
         const { error } = await resend.emails.send({
