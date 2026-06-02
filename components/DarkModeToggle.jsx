@@ -30,7 +30,7 @@ const DarkModeToggle = () => {
     return (
         <button
             onClick={toggleMode}
-            className="fixed right-8 top-20 z-50 rounded-full bg-eliteGold p-3 text-eliteBlack shadow-2xl transition hover:bg-eliteRed hover:text-white"
+            className="fixed right-6 top-6 z-50 rounded-full bg-eliteGold p-3 text-eliteBlack shadow-2xl transition hover:bg-eliteRed hover:text-white"
             aria-label="Toggle dark/light mode"
         >
             {isDark ? (

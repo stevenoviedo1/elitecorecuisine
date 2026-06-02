@@ -50,11 +50,6 @@ const Footer = () => {
                     <h3 className="mb-6 text-2xl font-bold text-eliteGold">Quick Links</h3>
                     <ul className="space-y-3">
                         <li>
-                            <Link href="/orders" className="text-eliteRed hover:text-eliteGold font-medium">
-                                View Recent Orders (Internal)
-                            </Link>
-                        </li>
-                        <li>
                             <a href="#home" className="text-gray-700 transition hover:text-eliteGold dark:text-gray-300 dark:hover:text-eliteRed">
                                 Home
                             </a>
